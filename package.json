@@ -1,27 +1,27 @@
 {
-    "name": "wpx-limited",
-    "version": "1.0.0",
-    "license": "MIT",
-    "scripts": {
-        "build": "next build",
-        "dev": "next",
-        "export": "next export",
-        "format": "prettier --write '**/*.{ts,tsx,js,json}'",
-        "start": "next start"
-    },
-    "dependencies": {
-        "next": "^7.0.2",
-        "react": "^16.5.2",
-        "react-dom": "^16.5.2",
-        "styled-components": "^4.0.0"
-    },
-    "devDependencies": {
-        "@types/next": "^7.0.3",
-        "@types/react": "^16.4.17",
-        "@types/react-dom": "^16.0.9",
-        "@types/styled-components": "^4.0.1",
-        "@zeit/next-typescript": "^1.1.1",
-        "babel-plugin-styled-components": "^1.8.0",
-        "prettier": "^1.15.3"
-    }
+  "name": "wpx-limited",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "next build",
+    "dev": "next",
+    "export": "next export",
+    "format": "prettier --write '**/*.{ts,tsx,js,json}'",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "^7.0.2",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "styled-components": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/next": "^7.0.3",
+    "@types/react": "^16.4.17",
+    "@types/react-dom": "^16.0.9",
+    "@types/styled-components": "^4.0.1",
+    "@zeit/next-typescript": "^1.1.1",
+    "babel-plugin-styled-components": "^1.8.0",
+    "prettier": "^1.15.3"
+  }
 }
