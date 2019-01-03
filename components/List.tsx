@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
-export default styled.ul`
+export const List = styled.ul`
   list-style: none;
   padding-inline-start: 0px;
 
@@ -11,4 +11,4 @@ export default styled.ul`
   li:last-child:after {
     content: '';
   }
-`;
+`

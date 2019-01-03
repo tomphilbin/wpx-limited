@@ -1,15 +1,15 @@
 import {
-  Container,
+  FlexContainer,
   Header,
   Link,
   List,
   ListItem,
   Subtitle,
   Title,
-} from '../components';
+} from '../components'
 
 export default () => (
-  <Container>
+  <FlexContainer>
     <Title>WPX</Title>
     <Subtitle>LIMITED</Subtitle>
     <Header>Full-Stack Software Development</Header>
@@ -24,9 +24,9 @@ export default () => (
     <List>
       <ListItem>DMARC</ListItem>
       <ListItem>SPF</ListItem>
-      <ListItem> DKIM </ListItem>
-      <ListItem> TLS</ListItem>
+      <ListItem>DKIM </ListItem>
+      <ListItem>TLS</ListItem>
     </List>
     <Link href="mailto:hello@wpx.limited">hello@wpx.limited</Link>
-  </Container>
-);
+  </FlexContainer>
+)

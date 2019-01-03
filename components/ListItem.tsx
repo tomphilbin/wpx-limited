@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
-export default styled.li`
+export const ListItem = styled.li`
   display: inline;
   font-size: 1.25em;
-`;
+`

@@ -3,28 +3,24 @@ import Document, {
   Main,
   NextDocumentContext,
   NextScript,
-} from 'next/document';
-import { ServerStyleSheet } from 'styled-components';
-import { GlobalStyle } from '../components';
+} from 'next/document'
+import { ServerStyleSheet } from 'styled-components'
+import { GlobalStyle } from '../components'
 
 export default class WpxDocument extends Document<{ styleTags: string[] }> {
   static getInitialProps({ renderPage }: NextDocumentContext) {
-    const sheet = new ServerStyleSheet();
+    const sheet = new ServerStyleSheet()
 
-    const page = renderPage(App => props =>
-      sheet.collectStyles(<App {...props} />)
-    );
-
-    const styleTags = sheet.getStyleElement();
-
-    return { ...page, styleTags };
+    return {
+      ...renderPage(App => props => sheet.collectStyles(<App {...props} />)),
+      styleTags: sheet.getStyleElement(),
+    }
   }
 
   render() {
     return (
       <html>
         <Head>
-          <title>WPX Limited</title>
           <link
             href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
             rel="stylesheet"
@@ -41,6 +37,6 @@ export default class WpxDocument extends Document<{ styleTags: string[] }> {
           <NextScript />
         </body>
       </html>
-    );
+    )
   }
 }
