@@ -1,32 +1,48 @@
+import { Fragment } from 'react'
 import {
   FlexContainer,
-  Header,
+  Heading,
   Link,
   List,
   ListItem,
   Subtitle,
   Title,
 } from '../components'
+import { getHomeContent } from '../helpers'
+import { useWindowHeight } from '../hooks'
 
-export default () => (
-  <FlexContainer>
-    <Title>WPX</Title>
-    <Subtitle>LIMITED</Subtitle>
-    <Header>Full-Stack Software Development</Header>
-    <List>
-      <ListItem>JavaScript</ListItem>
-      <ListItem>Node.js</ListItem>
-      <ListItem>React</ListItem>
-      <ListItem>C#</ListItem>
-      <ListItem>.NET Core</ListItem>
-    </List>
-    <Header>Cyber Security Consultancy</Header>
-    <List>
-      <ListItem>DMARC</ListItem>
-      <ListItem>SPF</ListItem>
-      <ListItem>DKIM </ListItem>
-      <ListItem>TLS</ListItem>
-    </List>
-    <Link href="mailto:hello@wpx.limited">hello@wpx.limited</Link>
-  </FlexContainer>
-)
+interface HomeProps {
+  title: string
+  subtitle: string
+  services: [{ heading: string; serviceList: string[] }]
+  email: string
+}
+
+const Home = ({ title, subtitle, services, email }: HomeProps) => {
+  const height = useWindowHeight()
+
+  return (
+    <FlexContainer height={height}>
+      <Title>{title}</Title>
+      <Subtitle>{subtitle}</Subtitle>
+      {services.map(({ heading, serviceList }) => (
+        <Fragment key={heading}>
+          <Heading>{heading}</Heading>
+          <List>
+            {serviceList.map(service => (
+              <ListItem key={service}>{service}</ListItem>
+            ))}
+          </List>
+        </Fragment>
+      ))}
+      <Link href={`mailto:${email}`}>hello@wpx.limited</Link>
+    </FlexContainer>
+  )
+}
+
+Home.getInitialProps = async () => {
+  const homeContent = await getHomeContent()
+  return homeContent
+}
+
+export default Home
