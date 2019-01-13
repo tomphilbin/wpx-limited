@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 interface FlexContainerProps {
   align?: 'baseline' | 'center' | 'flex-end' | 'flex-start' | 'stretch'
+  height?: string
 }
 
 export const FlexContainer = styled.div`
@@ -9,7 +10,7 @@ export const FlexContainer = styled.div`
   align-items: ${({ align = 'center' }: FlexContainerProps) => align};
   justify-content: center;
   flex-direction: column;
-  height: 100vh;
+  height: ${({ height = '100vh' }: FlexContainerProps) => height};
   min-height: min-content;
 
   @media (min-width: 1281px) {
