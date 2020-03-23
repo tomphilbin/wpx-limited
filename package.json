@@ -23,6 +23,6 @@
     "@types/styled-components": "^4.0.1",
     "@zeit/next-typescript": "^1.1.1",
     "babel-plugin-styled-components": "^1.8.0",
-    "prettier": "^1.15.3"
+    "prettier": "^2.0.2"
   }
 }
